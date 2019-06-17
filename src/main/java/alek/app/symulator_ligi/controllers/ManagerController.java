@@ -106,4 +106,13 @@ public class ManagerController {
 
         return "redirect:/manager/TablePlayer";
     }
+
+
+    @PostMapping("/deletePlayer")
+    public String deletePlayers(Long id) {
+        playerRepository.deleteById(id);
+        return "redirect:/manager/TablePlayer";
+    }
+
+
 }

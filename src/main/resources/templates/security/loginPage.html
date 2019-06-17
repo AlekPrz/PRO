@@ -9,20 +9,39 @@
     <title>LoginPage</title>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-nav ">
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4"></div>
+    <ul class="nav nav-pills nav-fill ml-auto">
+
+        <li class="nav-item mr-5">
+            <a class="nav-link" href="/"><h4> Strona Główna </h4>
+            </a>
+        </li>
+
+    </ul>
+    </div>
+</nav>
+
+
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
+            <h1>Zaloguj się</h1>
+
             <form th:action="@{/app-login}" method="post">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username">Nazwa</label>
                     <input id="username" type="text" name="username" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Hasło</label>
                     <input id="password" type="text" name="password" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="submit" class="btn btn-success">Zaloguj</button>
                 </div>
             </form>
         </div>
@@ -46,6 +65,17 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
+
+<style>
+    .navbar {
+        background-color: #23415C;
+    }
+
+    .nav-link {
+        color: white;
+    }
+</style>
+
 
 </html>
 

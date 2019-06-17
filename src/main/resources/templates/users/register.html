@@ -9,16 +9,30 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
+<nav class="navbar navbar-expand-lg navbar-nav ">
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4"></div>
+    <ul class="nav nav-pills nav-fill ml-auto">
+
+        <li class="nav-item mr-5">
+            <a class="nav-link" href="/"><h5> Strona Główna </h5>
+            </a>
+        </li>
+
+    </ul>
+    </div>
+</nav>
 
 
 <body>
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <h1>Register new user</h1>
+            <h1>Zarejestruj nowego użytkownika</h1>
             <form th:action="@{/register}" method="post" th:object="${user}">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username">Nazwa</label>
                     <input type="text" id="username" th:field="*{username}" class="form-control"/>
                 </div>
                 <div class="form-group">
@@ -26,21 +40,21 @@
                     <input type="text" id="email" th:field="*{email}" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Hasło</label>
                     <input type="password" id="password" th:field="*{password}" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="passwordC">Password</label>
+                    <label for="passwordC">Powtórz hasło</label>
                     <input type="password" id="passwordC" th:field="*{passwordConfirmation}" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label for="passwordC">Role</label>
+                    <label for="passwordC">Rola</label>
                     <select th:field="*{role}">
                         <option th:each="r : ${roles}" th:value="${r}" th:text="${r}"></option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success">Register</button>
+                    <button class="btn btn-success">Rejestruj</button>
                     <button class="btn btn-danger">Reset</button>
                 </div>
             </form>
@@ -58,4 +72,15 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </body>
+
+<style>
+    .navbar {
+        background-color: #23415C;
+    }
+
+    .nav-link {
+        color: white;
+    }
+</style>
+
 </html>

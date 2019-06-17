@@ -54,8 +54,12 @@
                     <td th:text="${w.getPoisiton() != null} ? ${w.getPoisiton().name()} : 'Nie przypisano zawodnikowi pozycji'"></td>
 
                     <td>
-                        <a class="btn btn-primary " th:href="@{/manager/modifyDate/{id}(id=${w.id})}">Przedłuż kontrakt
-                            zawodnika</a>
+                        <a class="btn btn-primary " th:href="@{/manager/modifyDate/{id}(id=${w.id})}">Przedłuż
+                            kontrakt</a>
+                        <form th:action="@{/manager/deletePlayer}" method="post">
+                            <input type="text" name="id" th:value="${w.id}" hidden="hidden">
+                            <input class="btn btn-success btn-sm" type="submit" value="Usuń Gracza"/>
+                        </form>
 
 
                     </td>
@@ -63,6 +67,7 @@
 
                 </tbody>
             </table>
+            <a href="/manager/addPlayer" class="btn btn-danger btn"> Dodaj Nowego Piłkarza </a>
         </div>
     </div>
 
