@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/addTable.css"/>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form th:action="@{/manager/addPlayer}" method="post" th:object="${player}" onsubmit="return validation();">
+    <table>
+
+        <tr>
+            <td>
+                <label> Imie </label>
+
+            </td>
+            <td>
+                <input type="text" th:field="*{name}" name="name" id="name"/>
+
+
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>
+                <label>Nazwisko </label>
+
+            </td>
+            <td>
+                <input type="text" th:field="*{surname}" name="surname" id="surname"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Wiek: </label>
+
+            </td>
+
+
+            <td>
+                <input type="number" th:field="*{age}" id="age" name="age"/>
+
+
+                <div id="ageError" style="color:white; size: 14px"></div>
+
+            </td>
+
+
+        </tr>
+
+        <tr>
+            <td>
+                <label>Pensja: </label>
+
+            </td>
+            <td>
+                <input type="text" th:field="*{pension}"/>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <label>Pozycja: </label>
+
+            </td>
+            <td>
+                <ul>
+                    <li th:each="h : ${position}">
+                        <input type="radio" th:field="*{poisiton}" th:value="${h}" name="position" required>
+                        <label th:text="${h}"></label>
+                    </li>
+                </ul>
+                <div id="radioError"></div>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="submit" value="Potwierdź">
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+<script type="text/javascript">
+
+
+    function validation() {
+
+        var name = document.getElementById('name').value;
+        var surname = document.getElementById('surname').value;
+        var radios = document.getElementsByName("position");
+        var age = document.getElementById("age").value;
+        var checkbox = document.getElementsByTagName("input");
+        var newVar = 0;
+        console.log(checkbox);
+
+
+        if (name == '' || surname == '') {
+            alert('Jedno z pól tekstowych jest puste');
+            return false;
+        }
+
+
+        if (age < 18 || age > 50) {
+            document.getElementById('ageError').innerHTML = "Wiek musi byc  z przedziału 18-50";
+            return false;
+        }
+    }
+
+
+</script>
+</body>
+</html>
+

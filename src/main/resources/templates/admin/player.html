@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div th:include="navigation/navigation">Navigation</div>
+<div class="container">
+
+    <h2 class="pt-5">Player List</h2>
+    <table cellpadding="2" cellspacing="2" border="1">
+
+        <tr>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Wiek</th>
+            <th>Pensja</th>
+            <th>Kontrakt</th>
+            <th>Pozycja</th>
+
+
+        </tr>
+        <tr th:each="w:${player}">
+            <td th:text="${w.name}"></td>
+            <td th:text="${w.surname}"></td>
+            <td th:text="${w.age}"></td>
+            <td th:text="${w.pension}"></td>
+            <td th:text="${w.date}"></td>
+            <td th:text="${w.getPoisiton() != null} ? ${w.getPoisiton().name()} : 'Nie przypisano zawodnikowi pozycji'"></td>
+
+            <td>
+
+                <form th:action="@{/admin/deletePlayer}" method="post">
+                    <input type="text" name="id" th:value="${w.id}" hidden="hidden">
+                    <input class="button" type="submit" value="Usuń"/>
+                </form>
+
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+
+                <a href="/admin/addPlayer" class="button"> Dodaj Nowego Piłkarza </a>
+
+
+            </td>
+
+
+        </tr>
+    </table>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+<style>
+
+    table {
+        width: auto;
+        margin: auto;
+        text-align: center;
+        table-layout: fixed;
+        border-collapse: collapse;
+
+    }
+
+    th, td {
+        padding: 15px;
+        color: black;
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: 15px;
+        font-family: Arial;
+
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 35px;
+        font-family: cursive;
+        color: darkolivegreen;
+    }
+
+    tr:nth-child(even) {
+        background-color: white;
+    }
+
+    tr:nth-child(odd) {
+        background-color: cornsilk;
+    }
+
+    td:nth-child(5) {
+        padding: inherit;
+    }
+
+    td:nth-child(1) {
+        padding: inherit;
+    }
+
+    tr:last-child {
+        padding-top: 0px;
+
+    }
+
+
+    input {
+        font-size: 150%;
+        width: auto;
+        font-family: cursive;
+        border: none;
+        background: none;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a {
+        color: black;
+    }
+
+</style>
+
+</html>

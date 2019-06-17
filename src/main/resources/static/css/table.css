@@ -1,0 +1,81 @@
+body {
+    background: url("/img/9004261-pilka-nozna.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
+table {
+    width: auto;
+    margin: auto;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+}
+
+th, td {
+    padding: 15px;
+    color: black;
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 15px;
+    font-family: Arial;
+
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    font-family: cursive;
+    color: darkolivegreen;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: cornsilk;
+}
+
+td:nth-child(5) {
+    padding: inherit;
+}
+
+td:nth-child(1) {
+    padding: inherit;
+}
+
+tr:last-child {
+    padding-top: 0px;
+
+}
+
+
+.edit {
+    font-size: 150%;
+    width: 100%;
+    font-family: cursive;
+}
+
+input {
+    font-size: 150%;
+    width: auto;
+    font-family: cursive;
+    border: none;
+    background: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a {
+    font-size: 130%;
+    width: auto;
+    font-family: cursive;
+    color: black;
+}

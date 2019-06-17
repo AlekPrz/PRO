@@ -1,0 +1,146 @@
+<!--
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+
+<div class="parent">
+    <div class="left">
+        <ul>
+            <li><a href="/playerTable">Zawodnicy</a></li>
+            <li><a href="/teamTable">Drużyny</a></li>
+            <li><a href="/companyTable">Sponsorzy</a></li>
+
+            <li><a href="/companyTeamTable">Sponsorzy Drużyny</a></li>
+
+            <li><a href="#news">Tabela</a></li>
+            <li><a href="/login">Logowanie</a></li>
+
+
+            <img src="/img/sponsor.png" alt="Miś">
+            <p>
+                SPONSOR
+            </p>
+        </ul>
+
+
+    </div>
+
+    <div class="right">
+        <p>Witamy na stronie amatorskiej ligi piłarskiej </p>
+    </div>
+</div>
+
+
+</body>
+
+
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-nav ">
+    <a class="navbar-brand ml-5">
+
+        <img src="/img/55089.png" width="30" height="30">
+        <em class="text-success">Admin</em>
+
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4"></div>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+            <a class="nav-link mr-5 " href="/admin/TablePlayer">Zawodnicy</a>
+        </li>
+        <li class="nav-item mr-5">
+            <a class="nav-link " href="/">Strona główna</a>
+        </li>
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+            <form th:action="@{/app-logout}" method="post">
+                <button type="submit" class="btn btn-success">Logout</button>
+            </form>
+        </li>
+    </ul>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h4>News 1:</h4>
+                <p class="lead">
+                    Jeśli chodzi o finanse, Federacja pokryje koszty podróży i
+                    zakwaterowania każdego z uczestników. Do tego wypłaci im odpowiednio: po 800 tysięcy euro przegranym
+                    półfinalistom, 1,4 miliona euro finaliście i 2 miliony euro zwycięzcy. Poza tym kluby otrzymają
+                    dodatkowo premie marketingowe. Media spekulują, że jeśli trofeum wygrają Real lub Barcelona, ich
+                    ostateczny zysk z tych rozgrywek wyniesie około 6 milionów euro.
+                </p>
+            </div>
+            <div class="col">
+                <h4>News 2:</h4>
+                <p>
+
+                    Początek spotkania należał do Real Madryt. Chociaż pierwsze akcje nie były udane, to później
+                    Królewscy wyszli na prowadzenie 10:3 i długo je utrzymywali. Bardzo dobrze prezentował się Randolph
+                    w ofensywie, a w obronie madrytczycy mieli problem ze zbiórkami. Zbyt często pozwalali rywalom na
+                    ponowienie akcji. Końcówka pierwszej kwarty należała do Gipuzkoi i różnica po dziesięciu minutach
+                    była minimalna. Gipuzkoa utrzymywała się w grze dzięki bardzo dobrej grze pod koszem. Baskowie
+                    zbierali piłki w ofensywie, czego Realowi Madryt brakowało. </p>
+            </div>
+            <div class="col">
+                <h4>Mecz przegrany 0-0...</h4>
+                <p>
+                    Po zmianie stron Królewscy starali się umiejętnie zarządzać przewagą. Obie drużyny zdobywały punkty
+                    w mniej więcej równym tempie, co jak najbardziej odpowiadało podopiecznym Pabla Laso, ponieważ
+                    różnica w wyniku cały czas przekraczała dziesięć oczek. Mecz przez to stracił na intensywności, a
+                    Real Madryt nie musiał się zbytnio forsować. Gipuzkoa wyraźnie straciła nadzieję na odniesienie
+                    sukcesu i w ostatniej kwarcie obniżyła poziom. Królewscy mogli się czuć na parkiecie swobodnie i z
+                    łatwością powiększyli jeszcze przewagę. Zwycięstwo zagwarantowało Realowi Madryt pierwsze miejsce w
+                    sezonie zasadniczym. Teraz czas na play-offy.
+                </p>
+
+                <a class="btn btn btn-primary active float-right">Wcisnij aby przeczytaj wiecej</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+<style>
+    .navbar {
+        background-color: #23415C;
+    }
+
+    .nav-link {
+        color: white;
+    }
+</style>
+
+</html>
+-->

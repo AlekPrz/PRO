@@ -1,0 +1,89 @@
+/*
+body{
+    background-color: blue;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.left {
+    background-color: #1a1a1a;
+    width: 12%;
+    height: 100%;
+}
+
+.left img{
+    padding-top: 30px;
+    height: 200%;
+    width: 100%;
+}
+
+.left p{
+
+    font-size: 35PX;;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+
+.right{
+    width: 88%;
+    height: 100%;
+    background-image: url("/img/tapeta-pilkarze-na-boisku.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center
+
+}
+.right p{
+    font-size: 40px;
+    color: white;
+    margin: 0;
+    font-family: "Impact Header", Times, serif;
+    width: 30%;
+    text-align: center;
+
+
+}
+ul
+{
+    height: 50px;
+    padding:0;
+    margin:0;
+    list-style: none;
+    text-align: center;
+
+}
+
+li{
+
+    margin-top: 20px;
+    padding-top: 30px;
+
+
+}
+li a {
+
+
+    color:white;
+    text-decoration: none;
+    font-family: cursive;
+    font-size: 15px
+
+
+}*/
